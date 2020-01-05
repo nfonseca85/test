@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jan  4 17:51:14 2020
+
+@author: neilfonseca
+"""
+
+import first
+import thinkstats2
+
+preg = nsfg.ReadFemPreg()
+live = preg[preg.outcome == 1]
+
+firsts = live[live.birthord == 1]
+others = live[live.birthord != 1]
+
+
+print(thinkstats2.CohenEffectSize(firsts.totalwgt_lb, others.totalwgt_lb))
